@@ -12,38 +12,35 @@ namespace practica230921
         //definir miembros
         // propiedades 
 
-        private int _documentId;
-        private string _titulo;
+      public string _documentoId { get; set; }
+      public string _titulo { get; set; }
+      public string _descripcion { get; set; }
 
-        private string _descripcion; 
-        private int _fechacreacion;
-    
-        //metodos de propiedades
-        // get-- obtiene el valor almacenado en la propiedad
-        // set-- asignar
+
         
 
-        public void setDocumentId(int documentId)
+        //propiedades autoimplementadas
+       public string _fechacreacion { get;  set; }
+       public string _contenido { get; set; }
+
+        //metodo constructor
+        public Documento(string documentoId, string titulo, string descripcion, string fechacreacion, string contenido ) //metodo constructor vacio
         {
-            _documentId = documentId;
-        }
-        public int getDocumentId()
-        {
-            return _documentId;
-        
-      }
-        //titulo
-        public void setTitulo(string titulo)
-        {
+            _documentoId = documentoId;
             _titulo = titulo;
-        }
-        public string getTitulo()
-        {
-            return _titulo;
+            _descripcion = descripcion;
+            _fechacreacion = fechacreacion;
+            _contenido = contenido;
         }
 
-      
+        public string ObtenerDatos()
+        {
+            return "Id de Documento: " + _documentoId + " Titulo: "   +  _titulo   +   " Descripcion : "
+                +   _descripcion +   " Fecha Creacion :  " +    _fechacreacion  +  "Contenido :  " +  _contenido ;
+
+        }
+    }
 
        
     }
-}
+

@@ -19,14 +19,50 @@ namespace practica230921
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // instancia de la clase documento 
-            Documento documento = new Documento();
-            documento.setDocumentId(1);
-            documento.setTitulo("practica");
 
-            MessageBox.Show(documento.getDocumentId() + documento.getTitulo());
+            {
+                // Instancia de la clase figura 
 
-           
+                //Documento documento = new Documento();
+                //// MEDIANTE METODOS DE PROPIEDAD
+                //// Creamos un objeto documento
+                ////SET
+                //documento.setDocumentoId(1);
+                //figura.setDocumento("Practica");
+
+
+                //// Mostrar datos de documento
+                ////GET
+                //MessageBox.Show(documento.getDocumentoId() + documento.getDocumento());
+
+                ////MEDIANTE PROPIEDAD AUTOIMPLEMENTADA
+                ////SET
+                //documento._titulo = "practica";
+
+                ////GET
+                //MessageBox.Show(documento._titulo);
+
+            }
+        }
+
+        
+
+        
+
+        private void btnAñadir_Click(object sender, EventArgs e)
+        {
+            Documento figura = new Documento(txtDocumentoId.Text, txtTitulo.Text, txtdescripcion.Text, txtfechacreacion.Text, txtcontenido.Text);
+            Datos.Items.Add(figura.ObtenerDatos());
+        }
+
+        private void Datos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
